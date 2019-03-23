@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.header {
+
+}
+
+.background {
+    width: 100%;
+}
+
+.background-backdrop {
+    background: #1b1e21;
+}
+
+.background-saryn {
+    position: relative;
+    margin: 0;
+}
+
+.header-section {
+    display: block;
+    width: 100%;
+    padding: 3rem;
+    background-color: #ccc;
+}
