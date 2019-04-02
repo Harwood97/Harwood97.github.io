@@ -3,7 +3,7 @@
 }
 
 html {
-
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +23,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     width: 100vw;
     background: #1b1e21;
-    overflow-x: hidden;
     margin: 0;
 }
 
@@ -42,6 +41,23 @@ a {
     z-index: 100;
 }
 
+.navbar-brand a {
+    color: #3f3743;
+    font-weight: bold;
+    font-family: 'Michroma', sans-serif;
+}
+
+.navbar-brand a:hover {
+    text-decoration: none;
+    color: #6a616e;
+}
+
+.navbar-brand a:active,
+.navbar-brand a:focus {
+    text-decoration: none;
+    color: white;
+}
+
 .nav__items a {
     color: #3f3743;
     font-family: 'Michroma', sans-serif;
@@ -56,11 +72,66 @@ a {
 
 .background-backdrop {
     background: #1b1e21;
+    overflow: hidden;
+    height: 100%;
+}
+
+.logo {
+    position: relative;
+    width: 40%;
+    height: auto;
+    margin: 36rem 0 0 0;
+    padding-left: 4rem;
 }
 
 .background-saryn {
     position: relative;
-    margin: 0;
+    margin: 5% 10% 0 0;
+    width: 41rem;
+    float: right;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .background-saryn {
+        position: absolute;
+        margin: 5% 0 0 0;
+        float: none;
+        height: 60%;
+        width: auto;
+    }
+
+    .background {
+        height: 54rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .background-saryn {
+        position: absolute;
+        margin: 5% 0 0 0;
+        float: none;
+        height: 75%;
+        width: auto;
+    }
+
+    .background {
+        height: 45rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .background-saryn {
+        position: absolute;
+        margin: 5% 0 0 10%;
+        float: none;
+        height: 90%;
+        width: auto;
+    }
+
+    .background {
+        height: 36rem;
+    }
 }
 
 .header-section {
