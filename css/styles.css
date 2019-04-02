@@ -4,6 +4,7 @@
 
 html {
     overflow-x: hidden;
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -21,9 +22,28 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    width: 100vw;
+    height: 100%;
+    display: grid;
     background: #1b1e21;
     margin: 0;
+    grid-template-rows: 4.5rem auto fit-content(4rem);
+    grid-template-areas: "hd"
+                         "mn"
+                         "ft";
+}
+
+@media(min-width: 992px) {
+    body {
+        font-family: 'Open Sans', sans-serif;
+        height: 100%;
+        display: grid;
+        background: #1b1e21;
+        margin: 0;
+        grid-template-rows: 4.5rem auto fit-content(4rem);
+        grid-template-areas: "hd"
+                             "mn"
+                             "ft";
+    }
 }
 
 a {
@@ -32,36 +52,101 @@ a {
 
 .header {
     display: flex;
-    position: fixed;
-    width: 100vw;
-    /*margin: 0.5rem 25%;*/
-    justify-content: center;
+    width: 100%;
     padding: 0.5rem 0;
     background: #6fab63;
+    grid-area: hd;
+    z-index: 90;
+    height: 4.5rem;
+}
+
+.header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 100;
 }
 
-.navbar-brand a {
+.navbar__brand a {
     color: #3f3743;
     font-weight: bold;
     font-family: 'Michroma', sans-serif;
+    font-size: 1.5rem;
 }
 
-.navbar-brand a:hover {
+.navbar__brand a:hover {
     text-decoration: none;
     color: #6a616e;
 }
 
-.navbar-brand a:active,
-.navbar-brand a:focus {
+.navbar__brand a:active,
+.navbar__brand a:focus {
     text-decoration: none;
     color: white;
+}
+
+.main-nav {
+    display: none;
+}
+
+@media(min-width: 992px) {
+    .main-nav {
+        display: flex;
+    }
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+}
+
+.nav__items {
+    display: flex;
 }
 
 .nav__items a {
     color: #3f3743;
     font-family: 'Michroma', sans-serif;
     font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.toggle-button {
+    float: right;
+
+}
+
+.toggle-button {
+    width: 3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.toggle-button__bar {
+    width: 100%;
+    height: 0.25rem;
+    background: black;
+    display: block;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+}
+
+@media(min-width: 992px) {
+    .toggle-button {
+        display: none;
+    }
+}
+
+.main {
+    grid-area: mn;
 }
 
 .background {
@@ -136,7 +221,7 @@ a {
 
 .header-section {
     font-family: 'Michroma', sans-serif;
-    display: block;
+    display: flex;
     width: 100%;
     padding: 3rem;
     background-color: #ccc;
@@ -150,11 +235,15 @@ a {
 .content-area-wrapper {
     background: white;
     border-radius: 5px;
+    display: flex;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .footer {
     background: #3f3743;
     padding: 1rem 0;
+    grid-area: ft;
 
 }
 
