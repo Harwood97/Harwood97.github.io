@@ -1,0 +1,12 @@
+.gallery {
+    display: grid;
+    grid-template-rows: 30rem;
+    grid-template-columns: 100%;
+}
+
+@media(min-width: 992px) {
+    .gallery {
+        grid-template-rows: 40rem;
+        grid-template-columns: 50% 50%;
+    }
+}
