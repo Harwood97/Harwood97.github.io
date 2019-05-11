@@ -1,13 +1,13 @@
 /*============================START BOOTSTRAP VARIABLE OVERrIDES============================*/
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
+
 
 $warGreen: #6fab63;
 
 $theme-colors: (
         primary: $warGreen,
 );
-
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
 @import "bootstrap/scss/bootstrap";
 /*============================END BOOTSTRAP VARIABLE OVERRIDES============================*/
 * {

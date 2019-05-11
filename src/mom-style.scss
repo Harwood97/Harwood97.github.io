@@ -1,0 +1,58 @@
+
+
+$mom-purple: #5a50a0;
+$off-purple: #373c5e;
+
+$theme-colors: (
+        primary: $mom-purple,
+        secondary: $off-purple,
+);
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/bootstrap";
+/*============================END BOOTSTRAP VARIABLE OVERRIDES============================*/
+@mixin half-s-ease {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-250%);
+    box-shadow: #0f6674 0 0 200px;
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: #0f6674 0 0 0;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Sofia|Stylish');
+h1,
+h2 {
+  font-family: 'Stylish', sans-serif;
+}
+
+h3 {
+  font-family: 'Sofia', cursive;
+}
+
+.card {
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  margin-top: 30vh !important;
+  box-shadow: #0f6674 0 0 0;
+  h3 {
+    text-shadow: $mom-purple 0 0 0;
+    @include half-s-ease;
+  }
+  @include half-s-ease;
+  &:hover {
+    margin-top: 25vh !important;
+    box-shadow: #0f6674 0 0 70px;
+    h3 {
+      text-shadow: #a69cff 0 0 5px;
+    }
+  }
+}
