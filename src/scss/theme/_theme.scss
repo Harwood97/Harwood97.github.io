@@ -1,0 +1,35 @@
+@keyframes cta {
+  0% {box-shadow: $primary 0 0 0;}
+  50% {box-shadow: $primary 0 0 6rem;}
+  100% {box-shadow: $primary 0 0 0;}
+}
+
+.header {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $xbox;
+}
+.hero {
+  background-image: url("../img/wojtek-fus-swbfii-key-art-pqbq.jpg");
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+}
+.bg-grid {
+  background-image: url("../img/swbf2-refresh-newsletter-bg-xl.jpg");
+  background-attachment: scroll;
+  background-position: center center;
+}
+.close {
+  text-shadow: none;
+}
+.cta {
+  box-shadow: $primary 0 0 0;
+  animation: cta 1s;
+  animation-iteration-count: 2;
+  animation-delay: 2s;
+}
