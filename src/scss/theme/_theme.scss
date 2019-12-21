@@ -1,6 +1,6 @@
 @keyframes cta {
   0% {box-shadow: $primary 0 0 0;}
-  50% {box-shadow: $primary 0 0 6rem;}
+  50% {box-shadow: $primary 0 0 7rem;}
   100% {box-shadow: $primary 0 0 0;}
 }
 
@@ -18,6 +18,16 @@
   background-size: cover;
   width: 100%;
   min-height: calc(100vh - 5rem);
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    content: '';
+    height: 3rem;
+    width: 100%;
+  }
 }
 .bg-grid {
   background-image: url("../img/swbf2-refresh-newsletter-bg-xl.jpg");
@@ -32,4 +42,5 @@
   animation: cta 1s;
   animation-iteration-count: 2;
   animation-delay: 2s;
+  position: relative;
 }

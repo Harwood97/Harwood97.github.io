@@ -9881,7 +9881,7 @@ h3 {
     box-shadow: #f2ae0a 0 0 0;
   }
   50% {
-    box-shadow: #f2ae0a 0 0 6rem;
+    box-shadow: #f2ae0a 0 0 7rem;
   }
   100% {
     box-shadow: #f2ae0a 0 0 0;
@@ -9902,6 +9902,16 @@ h3 {
   background-size: cover;
   width: 100%;
   min-height: calc(100vh - 5rem);
+  position: relative;
+}
+.hero::after {
+  position: absolute;
+  bottom: 0;
+  background: black;
+  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 100%);
+  content: "";
+  height: 3rem;
+  width: 100%;
 }
 
 .bg-grid {
@@ -9919,6 +9929,7 @@ h3 {
   animation: cta 1s;
   animation-iteration-count: 2;
   animation-delay: 2s;
+  position: relative;
 }
 
 /*# sourceMappingURL=theme.css.map */
