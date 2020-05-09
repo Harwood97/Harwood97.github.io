@@ -3,35 +3,43 @@
   "version": "1.0.0",
   "description": "A grunt workflow for AV Web Designs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "grunt build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
-    "autoprefixer": "^9.7.3",
-    "bootstrap": "^4.4.1",
+    "autoprefixer": "^9.7.6",
     "cssnano": "^4.1.10",
     "grunt": "^1.0.4",
     "grunt-babel": "^8.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-imagemin": "^3.1.0",
-    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-cwebp": "^2.1.1",
+    "grunt-jimp": "0.0.5",
     "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^3.1.0",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "jquery": "^3.4.1",
+    "node-sass": "^4.13.1",
     "postcss-font-magician": "^2.3.1"
   },
   "browserslist": [
     "defaults",
     "> 1%",
+    "IE 10",
     "IE 11"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.12.0",
+    "bootstrap": "^4.4.1",
+    "jquery": "3.4.1",
+    "regenerator-runtime": "^0.13.5",
+    "vanilla-lazyload": "^12.4.0"
+  }
 }

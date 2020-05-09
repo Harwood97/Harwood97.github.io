@@ -1,15 +1,101 @@
-$primary: #f2ae0a;
-$secondary: #6a6a6a;
-$white: #fff;
-$xbox: #28ad36;
-$dark: #222222;
+@use "sass:color";
 
-$body-bg:                   #252525;
-$body-color:                $white;
+$fa-font-path:        "../webfonts/";
+$fa-font-display: swap;
 
-$border-color: $secondary;
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
 
-$font-family-sans-serif: 'Lato', sans-serif;
+$primary: #3c8dbc;
+$dark: #52507a;
+$glass: rgba($dark,0.15);
+$gray: #757575;
+$lightGray: #b0b0b0;
+
+$favorite: #ff1f4d;
+
+$facebookColor: #3c67a7;
+$instagramColor: #e1306c;
+$linkedinColor: #0072b1;
+$redditColor: #ff5700;
+$rssColor: #f26522;
+$twitterColor: #1da1f2;
+$youtubeColor: #ff0000;
+
+$theme-colors: (
+        "primary": $primary,
+        "dark": $dark,
+        "white": $white,
+        "gray": $gray,
+        "black": $black,
+        "glass": $glass
+);
+
+/*$link-color:                              theme-color("primary") !default;*/
+
+$body-bg:                   $white !default;
+$body-color:                $gray-900 !default;
+
+$enable-rounded:                              true !default;
+
+$sidebar-width: 240px;
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+) !default;
+
+$grid-gutter-width:           50px ;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                $font-size-base * 1.65 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-xs:                $font-size-base * .5;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+$fa-font-size-base:    $font-size-base;
+
+$font-family-sans-serif: 'Annie Use Your Telescope', sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
-$font-family-secondary: 'Oswald', sans-serif;
-$headings-font-family: $font-family-secondary;
+
+$input-btn-padding-y:         .375rem !default;
+$input-btn-padding-x:         .75rem !default;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+
+$spacers: (
+        0: 0,
+        1: ($spacer * .25),
+        2: ($spacer * .5),
+        3: $spacer,
+        4: ($spacer * 1.5),
+        5: ($spacer * 3),
+        'gutter': $grid-gutter-width / 2
+);

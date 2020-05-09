@@ -110,3 +110,12 @@ typings/
 
 # vendor folders
 vendor/
+
+/css/
+/img/
+/js/
+/webfonts/
+/src/js/bundled/
+/src/js/babel/
+/src/scss/theme.css
+/src/scss/theme.css.map

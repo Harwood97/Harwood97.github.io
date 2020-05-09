@@ -1,34 +1,49 @@
 module.exports = function (grunt) {
     const mozjpeg = require('imagemin-mozjpeg');
     const pngquant = require('imagemin-pngquant');
+    const sass = require('node-sass');
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
 
         copy: {
-            bootstrapcss: {
-                files: [{
-                    expand: true,
-                    cwd: 'node_modules/bootstrap/scss/',
-                    src: ['**'],
-                    dest: 'src/vendor/bootstrap/scss/',
-                }],
+            bootstrap: {
+                files: [
+                    { //bootstrap scss
+                        expand: true,
+                        cwd: 'node_modules/bootstrap/scss/',
+                        src: ['**'],
+                        dest: 'src/vendor/bootstrap/scss/',
+                    },
+                    { //bootstrap js
+                        expand: true,
+                        cwd: 'node_modules/bootstrap/dist/js/',
+                        src: ['bootstrap.bundle.js'],
+                        dest: 'src/vendor/bootstrap/js/',
+                    },
+                    { //jquery
+                        expand: true,
+                        cwd: 'node_modules/jquery/dist/',
+                        src: ['jquery.js'],
+                        dest: 'src/vendor/jquery/',
+                    }
+                ],
             },
-            bootstrapjs: {
-                files: [{
-                    expand: true,
-                    cwd: 'node_modules/bootstrap/dist/js/',
-                    src: ['bootstrap.bundle.js'],
-                    dest: 'src/vendor/bootstrap/js/',
-                }],
-            },
-            jquery: {
-                files: [{
-                    expand: true,
-                    cwd: 'node_modules/jquery/dist/',
-                    src: ['jquery.js'],
-                    dest: 'src/vendor/jquery/',
-                }],
+            fontawesome: {
+                files: [
+                    { //fontawesome scss
+                        expand: true,
+                        cwd: 'node_modules/@fortawesome/fontawesome-pro/scss/',
+                        src: '**',
+                        dest: 'src/vendor/fontawesome/scss',
+                    },
+                    { //fontawesome webfonts
+                        expand: true,
+                        cwd: 'node_modules/@fortawesome/fontawesome-pro/webfonts/',
+                        src: '**',
+                        dest: 'dist/webfonts',
+                    }
+                ],
             },
         },
 
@@ -60,11 +75,16 @@ module.exports = function (grunt) {
         concat: {
             options: {
                 // define a string to put between each file in the concatenated output
-                separator: '\n'
+                separator: ';'
             },
             dist: {
                 // the files to concatenate
-                src: ['src/vendor/jquery/*.js', 'src/vendor/bootstrap/js/*.js', 'src/js/babel/**/*.js'],
+                src: [
+                    'node_modules/regenerator-runtime/runtime.js',
+                    'src/vendor/jquery/*.js',
+                    'src/vendor/bootstrap/js/*.js',
+                    'src/js/babel/*.js'
+                ],
                 // the location of the resulting JS file
                 dest: 'src/js/bundled/main.js'
             }
@@ -93,6 +113,10 @@ module.exports = function (grunt) {
 
         /*CSS*/
         sass: {
+            options: {
+                implementation: sass,
+                sourceMap: true
+            },
             dist: {
                 files: {
                     'src/scss/theme.css': 'src/scss/theme.scss'
@@ -104,7 +128,7 @@ module.exports = function (grunt) {
             options: {
                 map: {
                     inline: false, // save all sourcemaps as separate files...
-                    annotation: 'dist/css/maps/' // ...to the specified directory
+                    annotation: 'css/maps/' // ...to the specified directory
                 },
 
                 processors: [
@@ -123,7 +147,7 @@ module.exports = function (grunt) {
         imagemin: {
             options: {
                 use: [
-                    pngquant({quality: [0.9, 0.9]}),
+                    pngquant({quality: [1, 1]}),
                     mozjpeg({quality: 85})
                 ]
             },
@@ -131,8 +155,23 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/img',
+                    src: ['**/*.{png,jpg,JPG}'],
+                    dest: 'dist/img/'
+                }]
+            }
+        },
+
+        cwebp: {
+            dynamic: {
+                options: {
+                    q: 50
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src/img',
                     src: ['**/*.{png,jpg}'],
-                    dest: 'dist/img'
+                    dest: 'dist/img/',
+                    ext: '.webp'
                 }]
             }
         },
@@ -160,12 +199,12 @@ module.exports = function (grunt) {
 
     /*install steps*/
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.registerTask('copy-vendor', ['copy']);
+    grunt.registerTask('copy-assets', ['copy']);
     /*to watch files for changes*/
     grunt.loadNpmTasks('grunt-contrib-watch');
     /*css tasks*/
     grunt.loadNpmTasks('grunt-postcss');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.registerTask('css', ['sass', 'postcss']);
     /*js tasks*/
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -175,6 +214,9 @@ module.exports = function (grunt) {
     grunt.registerTask('jsSingle', ['babel:dist2', 'uglify:dist2']);
     /*image tasks*/
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.registerTask('img', ['imagemin']);
+    grunt.loadNpmTasks('grunt-cwebp');
+    grunt.registerTask('img', ['imagemin', 'cwebp']);
+
+    grunt.registerTask('build', ['copy-assets', 'css', 'js', 'jsSingle', 'img']);
 
 };
