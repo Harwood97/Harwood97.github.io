@@ -128,7 +128,7 @@ module.exports = function (grunt) {
             options: {
                 map: {
                     inline: false, // save all sourcemaps as separate files...
-                    annotation: 'css/maps/' // ...to the specified directory
+                    annotation: 'dist/css/maps/' // ...to the specified directory
                 },
 
                 processors: [
