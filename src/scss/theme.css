@@ -20550,6 +20550,10 @@ a.text-glass:hover, a.text-glass:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+body {
+  background-image: url("../img/sky.jpg");
+  background-size: cover; }
+
 h1,
 h2,
 h3,
