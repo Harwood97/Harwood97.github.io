@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/sky.jpg");
+  background-image: url("../img/sakura.jpg");
   background-size: cover;
 }
 
@@ -7,7 +7,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Roboto Slab";
+  font-family: "Itim";
 }
 
 p {
@@ -25,6 +25,7 @@ label.card-flip {
   position: relative;
   margin: 30px auto;
   cursor: pointer;
+  box-shadow: black 5px 10px 20px 2px;
 }
 
 .face {
@@ -42,6 +43,9 @@ label.card-flip {
   background: white;
   z-index: 3;
   backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .inner-left {
@@ -79,5 +83,4 @@ label.card-flip {
 
 .icon {
   font-size: 200px;
-  margin-top: 100px;
 }

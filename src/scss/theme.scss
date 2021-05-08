@@ -1,4 +1,4 @@
-@import "theme/theme-variables.scss";
+@import "theme/theme-variables";
 
 // Fontawesome
 @import "node_modules/@fortawesome/fontawesome-pro/scss/fontawesome";
@@ -9,6 +9,6 @@
 @import "node_modules/@fortawesome/fontawesome-pro/scss/solid";
 
 // Bootstrap
-@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
 
-@import "theme/theme.scss";
+@import "theme/theme";

@@ -12,7 +12,7 @@
     "@babel/preset-env": "^7.7.6",
     "autoprefixer": "^9.7.6",
     "cssnano": "^4.1.10",
-    "grunt": "^1.0.4",
+    "grunt": "^1.4.0",
     "grunt-babel": "^8.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
@@ -26,7 +26,7 @@
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "postcss-font-magician": "^2.3.1"
   },
   "browserslist": [
@@ -37,8 +37,8 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.12.0",
-    "bootstrap": "^4.4.1",
-    "jquery": "3.4.1",
+    "bootstrap": "^4.5.3",
+    "jquery": "3.5.1",
     "regenerator-runtime": "^0.13.5",
     "vanilla-lazyload": "^12.4.0"
   }
