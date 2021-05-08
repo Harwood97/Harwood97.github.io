@@ -20600,7 +20600,8 @@ a.text-glass:hover, a.text-glass:focus {
 
 body {
   background-image: url("../img/sakura.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 h1,
 h2,
@@ -20616,7 +20617,7 @@ p {
 
 label.card-flip {
   display: block;
-  width: 50%;
+  width: 100%;
   height: 600px;
   position: relative;
   margin: 30px auto;
@@ -20667,5 +20668,9 @@ label.card-flip {
 
 .icon {
   font-size: 200px; }
+
+@media (min-width: 1024px) {
+  label.card-flip {
+    width: 50%; } }
 
 /*# sourceMappingURL=theme.css.map */
