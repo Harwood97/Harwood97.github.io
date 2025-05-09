@@ -8,25 +8,25 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
-    "autoprefixer": "^9.7.6",
-    "cssnano": "^4.1.10",
-    "grunt": "^1.4.0",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
+    "grunt": "^1.6.1",
     "grunt-babel": "^8.0.0",
-    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-concat": "^2.1.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-imagemin": "^3.1.0",
-    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-cwebp": "^2.1.1",
     "grunt-jimp": "0.0.5",
     "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^3.1.0",
+    "grunt-sass": "^4.0.0",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "node-sass": "^4.14.1",
+    "sass": "^1.87.0",
     "postcss-font-magician": "^2.3.1"
   },
   "browserslist": [
@@ -36,10 +36,8 @@
     "IE 11"
   ],
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.12.0",
-    "bootstrap": "^4.5.3",
-    "jquery": "3.5.1",
-    "regenerator-runtime": "^0.13.5",
-    "vanilla-lazyload": "^12.4.0"
+    "@fortawesome/fontawesome-pro": "^6.7.2",
+    "bootstrap": "^5.3.6",
+    "regenerator-runtime": "^0.13.5"
   }
 }

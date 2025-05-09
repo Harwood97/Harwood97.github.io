@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
     const mozjpeg = require('imagemin-mozjpeg');
     const pngquant = require('imagemin-pngquant');
-    const sass = require('node-sass');
+    const sass = require('sass');
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
